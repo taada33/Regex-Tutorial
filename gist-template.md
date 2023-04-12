@@ -53,15 +53,25 @@ Additionally, ```?``` can be used to indicate that a match will be made with eit
 If a specific number of matches are required, then curly brackets can be used to accomplish this. Using ```x{n}```  means that the character ```x``` must be matched exactly ```n``` times. Alternatively, ```x{n,}``` means that the character ```x``` must be matched at least ```n``` times.   
 A range of matches can be specified using ```x{n,m}```, where ```x``` is matched between ```n``` (lower bound) and ```m``` (higher bound) times.   
 
-
 ### OR Operator
 
 The OR operator can be used with regex to implement more complex logical expressions. For instance, if you wanted to have matches where the binary representation of the hexidecimal looked something like ```1xxx0000``` (where x indicates bits that can take any value), then one would want to accept hexidecimal values ```80``` or ```90``` or ```a0``` etc. This could be accomplished with the following regex expression:   
 ```/80|90|a0|b0|c0|d0|e0|f0/```   
 where the pipe ```|``` indicates an OR operator within the regex. This means that only of the the strings within the expression must be present for a match to occur.  
+
 ### Character Classes
 
+Character classes allow the regex user to specify which characters can occur in a match. For example, if we wanted to match ```ffx``` in hexidecimal, where x can be any hexidecimal character, we would use the regex expression:
+```/ff[abcdef0123456789]/```
+this indicates that the match must be ```ff``` followed by any of the characters inside the square brackets. Alternatively, this could be accomplished using
+```/ff[a-f0-9]/``` where the notation ```a-f``` and ```0-9``` specify the range of acceptable characters (abcdef and 0123456789).   
+
 ### Flags
+
+Flags are used in regular expressions to allow for additional specified functionality. For instance, following your regex with an ```i``` flag such as
+```/ffff/i``` will search for the ```ffff``` with case insensitivety; this means that both ```ffff``` and ```FFFF``` or ```ffFF``` will all match.   
+Another useful flag is the ```g``` (global) flag, which does not return after the first match, but rather searches throughout the provided string for all matches.   
+The multi line flag ```m``` can be used to alter the functionality of the ```$``` and ```^``` anchors, which will instead refer to the beginning and end of a line instead of the beginning and end of a string.
 
 ### Grouping and Capturing
 
