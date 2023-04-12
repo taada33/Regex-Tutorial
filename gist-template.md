@@ -4,6 +4,7 @@ This tutorial will explain various concepts concerning regular expressions (rege
 
 ## Summary
 
+--hex blurb?
 Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.  
 ```/^#?([a-f0-9]{6}|[a-f0-9]{3})$/```  
 
@@ -43,6 +44,10 @@ but not:
 ```000ffff``` or ```0000fff```   
 
 ### Quantifiers
+
+Quantifiers can be used in regular expressions to determine how many times a match is made. For instance, the ```*``` character following a specified item means that the item will be matched 0 or more times. A similarly placed ```+``` character means that the item will be matched 1 or more times.   
+For instance, ```/00f*/``` will produce matches given strings ```00``` ```00f``` or ```00ffffff```   
+While ```/00f+``` will match in all cases above except ```00```, since there is no occurence of the ```f``` character.   
 
 ### OR Operator
 
