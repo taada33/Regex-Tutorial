@@ -31,13 +31,16 @@ The expression above allows one to filter strings for hexidecimal numbers. The s
 
 Anchors allow the user to specify the position constraints of a regex match. The caret ```^``` can be used to specify that the match must occur at the beginning of a string. For example, a regex such as ```/^aee/``` would match  
 ```aee```  
-but not  
+but not:  
 ```123aee```  
 Alternatively, one can match the end of a string by using the ```$``` character. This could be accomplished with ```/fff$/``` which would match  
 ```000fff```      
-but not     
+but not:     
 ```fff000```    
-
+These anchors can be used in the same expressions such as ```/^000fff$/``` which would match  
+```000fff```   
+but not:   
+```000ffff``` or ```0000fff```   
 
 ### Quantifiers
 
