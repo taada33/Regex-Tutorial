@@ -48,6 +48,10 @@ but not:
 Quantifiers can be used in regular expressions to determine how many times a match is made. For instance, the ```*``` character following a specified item means that the item will be matched 0 or more times. A similarly placed ```+``` character means that the item will be matched 1 or more times.   
 For instance, ```/00f*/``` will produce matches given strings ```00``` ```00f``` or ```00ffffff```   
 While ```/00f+``` will match in all cases above except ```00```, since there is no occurence of the ```f``` character.   
+Additionally, ```?``` can be used to indicate that a match will be made with either 0 or 1 occurences of the preceding character. In practice, a regular expression of ```/00f?/``` would match the strings ```00``` and ```00f``` but not ```00ffffff```   
+If a specific number of matches are required, then curly brackets can be used to accomplish this. Using ```x{n}```  means that the character ```x``` must be matched exactly ```n``` times. Alternatively, ```x{n,}``` means that the character ```x``` must be matched at least ```n``` times.   
+A range of matches can be specified using ```x{n,m}```, where ```x``` is matched between ```n``` (lower bound) and ```m``` (higher bound) times.   
+
 
 ### OR Operator
 
