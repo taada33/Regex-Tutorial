@@ -1,6 +1,6 @@
 # Matching a Hex Value with Regular Expressions
 
-This tutorial will explain various concepts concerning regular expressions (regex), and will show how to use regex to match a specific hexidecimal value.
+This tutorial will explain various concepts concerning regular expressions (regex), and will show how to use regex to match hexidecimal values.
 
 ## Summary
 
