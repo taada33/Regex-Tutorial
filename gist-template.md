@@ -34,9 +34,9 @@ Anchors allow the user to specify the position constraints of a regex match. The
 but not  
 ```123aee```  
 Alternatively, one can match the end of a string by using the ```$``` character. This could be accomplished with ```/fff$/``` which would match  
-```000fff```  
-but not   
-```fff000```  
+```000fff```      
+but not     
+```fff000```    
 
 
 ### Quantifiers
