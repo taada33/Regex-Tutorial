@@ -1,10 +1,15 @@
-# Title (replace with your title)
+# Matching a Hex Value with Regular Expressions
 
-Introductory paragraph (replace this with your text)
+This tutorial will explain various concepts concerning regular expressions (regex), and will show how to use regex to match a specific hexidecimal value.
 
 ## Summary
 
 Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+```/^#?([a-f0-9]{6}|[a-f0-9]{3})$/```
+
+The expression above allows one to filter strings for hexidecimal numbers. The string provided must begin with and end with the hexidecimal value for a match to occur. This filter accepts either 6 hex character strings or 3 hex character strings.
+
+```fff``` or ```000aaa``` would be acceptable, while ```fff9``` or ```fffa``` would not.
 
 ## Table of Contents
 
@@ -23,6 +28,16 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ## Regex Components
 
 ### Anchors
+
+Anchors allow the user to specify the position constraints of a regex match. The caret ```^``` can be used to specify that the match must occur at the beginning of a string. For example, a regex such as ```/^aee/``` would match
+```aee```
+but not
+```123aee```
+Alternatively, one can match the end of a string by using the ```$``` character. This could be accomplished with ```/fff$/``` which would match
+```000fff```
+but not 
+```fff000```
+
 
 ### Quantifiers
 
