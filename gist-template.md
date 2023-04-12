@@ -49,12 +49,16 @@ Quantifiers can be used in regular expressions to determine how many times a mat
 For instance, ```/00f*/``` will produce matches given strings ```00``` ```00f``` or ```00ffffff```   
 While ```/00f+``` will match in all cases above except ```00```, since there is no occurence of the ```f``` character.   
 Additionally, ```?``` can be used to indicate that a match will be made with either 0 or 1 occurences of the preceding character. In practice, a regular expression of ```/00f?/``` would match the strings ```00``` and ```00f``` but not ```00ffffff```   
+
 If a specific number of matches are required, then curly brackets can be used to accomplish this. Using ```x{n}```  means that the character ```x``` must be matched exactly ```n``` times. Alternatively, ```x{n,}``` means that the character ```x``` must be matched at least ```n``` times.   
 A range of matches can be specified using ```x{n,m}```, where ```x``` is matched between ```n``` (lower bound) and ```m``` (higher bound) times.   
 
 
 ### OR Operator
 
+The OR operator can be used with regex to implement more complex logical expressions. For instance, if you wanted to have matches where the binary representation of the hexidecimal looked something like ```1xxx0000``` (where x indicates bits that can take any value), then one would want to accept hexidecimal values ```80``` or ```90``` or ```a0``` etc. This could be accomplished with the following regex expression:   
+```/80|90|a0|b0|c0|d0|e0|f0/```   
+where the pipe ```|``` indicates an OR operator within the regex. This means that only of the the strings within the expression must be present for a match to occur.  
 ### Character Classes
 
 ### Flags
