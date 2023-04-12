@@ -4,12 +4,12 @@ This tutorial will explain various concepts concerning regular expressions (rege
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
-```/^#?([a-f0-9]{6}|[a-f0-9]{3})$/```
+Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.  
+```/^#?([a-f0-9]{6}|[a-f0-9]{3})$/```  
 
-The expression above allows one to filter strings for hexidecimal numbers. The string provided must begin with and end with the hexidecimal value for a match to occur. This filter accepts either 6 hex character strings or 3 hex character strings.
+The expression above allows one to filter strings for hexidecimal numbers. The string provided must begin with and end with the hexidecimal value for a match to occur. This filter accepts either 6 hex character strings or 3 hex character strings.  
 
-```fff``` or ```000aaa``` would be acceptable, while ```fff9``` or ```fffa``` would not.
+```fff``` or ```000aaa``` would be acceptable, while ```fff9``` or ```fffa``` would not.  
 
 ## Table of Contents
 
