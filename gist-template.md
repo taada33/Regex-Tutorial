@@ -70,6 +70,7 @@ this indicates that the match must be ```ff``` followed by any of the characters
 
 Three flags(```i``` and ```g``` and ```m```) will be covered in this tutorial. Flags are used in regular expressions to allow for additional specified functionality.    For instance, following your regex with an ```i``` flag such as ```/ffff/i``` will search for the ```ffff``` with case insensitivety; this means that both ```ffff``` and ```FFFF``` or ```ffFF``` will all match.   
 Another useful flag is the ```g``` (global) flag, which does not return after the first match, but rather searches throughout the provided string for all matches.   
+ex: given ```"90 + 10 = a0"``` to the expression ```/[a-f0-9]{2}/g``` will match ```//90, 10, a0```
 The multi line flag ```m``` can be used to alter the functionality of the ```$``` and ```^``` anchors, which will instead refer to the beginning and end of a line instead of the beginning and end of a string.
 
 ### Grouping and Capturing
