@@ -61,12 +61,12 @@ where the pipe ```|``` indicates an OR operator within the regex. This means tha
 
 ### Character Classes
 
-Character classes allow the regex user to specify which characters can occur in a match. For example, if we wanted to match ```ffx``` in hexidecimal, where x can be any hexidecimal character, we would use the regex expression:
+Character classes allow the regex user to specify which characters can occur in a match. For example, if we wanted to match ```ffx``` in hexidecimal, where x can be any hexidecimal character, we could use the following bracket expression to define a character class:
 ```/ff[abcdef0123456789]/```
 this indicates that the match must be ```ff``` followed by any of the characters inside the square brackets. Alternatively, this could be accomplished using
 ```/ff[a-f0-9]/``` where the notation ```a-f``` and ```0-9``` specify the range of acceptable characters (abcdef and 0123456789).
 
-Character classes can also be expressed in the form ```\d``` or ```\s``` or ```\w```. ```\d``` would match any digit, ```\s``` would match any whitespace symbol (spaces, tabs, or newlines) and ```\w``` would match word characters. ```\w``` is equivalent to the bracket expression ```[A-za-z0-9_]```. Finally, the dot character class ```.``` can be used to match any character (except newline). 
+Shorthand character classes can also be expressed in the form ```\d``` or ```\s``` or ```\w```. ```\d``` would match any digit, ```\s``` would match any whitespace symbol (spaces, tabs, or newlines) and ```\w``` would match word characters. ```\w``` is equivalent to the bracket expression ```[A-za-z0-9_]```. Character classes can be inverted ```\D``` or ```\S``` or ```\W```, which simply mean they match the opposite of their counterparts. Finally, the dot character class ```.``` can be used to match any character (except newline). 
 
 ### Flags
 
@@ -83,7 +83,14 @@ Where ff is grouped together. This allows one to use quantifiers on a group of c
 
 ### Bracket Expressions
 
-Brackets expressions, discussed in the [character classes](#character-classes) section above, can be used to create a list of acceptable characters in a position.
+Brackets expressions, discussed in the [character classes](#character-classes) section above, can be used to create a list of acceptable characters to match. Bracket expressions allow for more complex behaviour relative to shorthand character classes such as ranges, negation, subtraction, and intersection.
+
+Ranges were shown above in the character class section as a shorthand for writing out all the acceptable characters in a set. Instead of defining a bracket expression as ```[abcdef]``` one could express it as ```[a-f]``` where the hyphen ```-``` denotes a range.
+
+While shorthand character classes do allow for negation (```\D``` is negated ```\d```) bracket expressions can use negation in more complex ways. For example, if one wanted to negate inside a bracket expression, the caret symbol ```^``` placed at the beginning of the brakcet would negate then entire expression. This could be done like ```[^g-z]``` where a match would be made to characters that are not in the range of g-z.
+
+Subtraction is another feature of bracket expressions, which allows the user to 
+
 ### Greedy and Lazy Match
 
 ### Boundaries
