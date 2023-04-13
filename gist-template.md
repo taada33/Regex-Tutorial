@@ -75,7 +75,10 @@ The multi line flag ```m``` can be used to alter the functionality of the ```$``
 
 ### Grouping and Capturing
 
-Grouping in regular expressions is the use of parenthesis or round brackets ```(``` and ```)``` to denote a group. This allows one to treat a set of characters inside a group as a singular item. By default, each group in an expression is numbered from left to right and can be [back-referenced](#back-references). If this behaviour is not desired, then a non-capturing group can be used with syntax ```(?:text)
+Grouping in regular expressions is the use of parenthesis or round brackets ```(``` and ```)``` to denote a group. This allows one to treat a set of characters inside a group as a singular item. By default, each group in an expression is numbered from left to right and can be [back-referenced](#back-references). If this behaviour is not desired, then a non-capturing group can be used with syntax ```(?:text)```. A regular capture group may look something like:   
+```/a(ff)/```
+Where ff is grouped together. This allows one to use quantifiers on a group of characters (ex: ```/a(ff){2}/``` which would match ```affff```) or allows the use of alternation within groups (ex: ```/f(11|00)/``` which would match ```f11``` or ```f00``).
+
 ### Bracket Expressions
 
 ### Greedy and Lazy Match
