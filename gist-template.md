@@ -51,7 +51,9 @@ While ```/00f+``` will match in all cases above except ```00```, since there is 
 Additionally, ```?``` can be used to indicate that a match will be made with either 0 or 1 occurences of the preceding character. In practice, a regular expression of ```/00f?/``` would match the strings ```00``` and ```00f``` but not ```00ffffff```   
 
 If a specific number of matches are required, then curly brackets can be used to accomplish this. Using ```x{n}```  means that the character ```x``` must be matched exactly ```n``` times. Alternatively, ```x{n,}``` means that the character ```x``` must be matched at least ```n``` times.   
-A range of matches can be specified using ```x{n,m}```, where ```x``` is matched between ```n``` (lower bound) and ```m``` (higher bound) times.   
+A range of matches can be specified using ```x{n,m}```, where ```x``` is matched between ```n``` (lower bound) and ```m``` (higher bound) times.  
+
+Additionally, the ```?``` character can be used by itself to specify that a match must occur either 0 or 1 time(s). The question mark operator can also be combined with other quantifiers to specify [lazy matching](#greedy-and-lazy-match).
 
 ### OR Operator
 
@@ -83,15 +85,15 @@ Where ff is grouped together. This allows one to use quantifiers on a group of c
 
 ### Bracket Expressions
 
-Brackets expressions, discussed in the [character classes](#character-classes) section above, can be used to create a list of acceptable characters to match. Bracket expressions allow for more complex behaviour relative to shorthand character classes such as ranges, negation, subtraction, and intersection.
+Brackets expressions, discussed in the [character classes](#character-classes) section above, can be used to create a list of acceptable characters to match. Bracket expressions allow for more complex behaviour relative to shorthand character classes.
 
 Ranges were shown above in the character class section as a shorthand for writing out all the acceptable characters in a set. Instead of defining a bracket expression as ```[abcdef]``` one could express it as ```[a-f]``` where the hyphen ```-``` denotes a range.
 
-While shorthand character classes do allow for negation (```\D``` is negated ```\d```) bracket expressions can use negation in more complex ways. For example, if one wanted to negate inside a bracket expression, the caret symbol ```^``` placed at the beginning of the brakcet would negate then entire expression. This could be done like ```[^g-z]``` where a match would be made to characters that are not in the range of g-z.
-
-Subtraction is another feature of bracket expressions, which allows the user to 
+While shorthand character classes do allow for negation (```\D``` is negated ```\d```) bracket expressions can use negation in more complex ways. For example, if one wanted to negate inside a bracket expression, the caret symbol ```^``` placed at the beginning of the bracket would negate then entire expression. This could be done like ```[^g-z]``` where a match would be made to characters that are not in the range of g-z.
 
 ### Greedy and Lazy Match
+
+Greedy and lazy matching is the difference between matching as much as possible and as little as possible. Greedy matches will match as much as possible (```/fa+/``` will match ```faaa```, matching as many ```a``` characters as possible) while using a lazy match (done by adding a ```?``` to the quantifier) will match as few as possible (```/fa+?/``` will match ```fa``` from a string ```faaa```).   
 
 ### Boundaries
 
