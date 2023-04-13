@@ -64,7 +64,9 @@ where the pipe ```|``` indicates an OR operator within the regex. This means tha
 Character classes allow the regex user to specify which characters can occur in a match. For example, if we wanted to match ```ffx``` in hexidecimal, where x can be any hexidecimal character, we would use the regex expression:
 ```/ff[abcdef0123456789]/```
 this indicates that the match must be ```ff``` followed by any of the characters inside the square brackets. Alternatively, this could be accomplished using
-```/ff[a-f0-9]/``` where the notation ```a-f``` and ```0-9``` specify the range of acceptable characters (abcdef and 0123456789).   
+```/ff[a-f0-9]/``` where the notation ```a-f``` and ```0-9``` specify the range of acceptable characters (abcdef and 0123456789).
+
+Character classes can also be expressed in the form ```\d``` or ```\s``` ```\w```. ```\d``` would match any digit, ```\s``` would match any whitespace symbol (spaces, tabs, or newlines) and ```\w``` would match word characters. ```\w``` is equivalent to the bracket expression ```[A-za-z0-9_]```. Finally, the dot character class ```.``` can be used to match any character (except newline). 
 
 ### Flags
 
@@ -77,7 +79,7 @@ The multi line flag ```m``` can be used to alter the functionality of the ```$``
 
 Grouping in regular expressions is the use of parenthesis or round brackets ```(``` and ```)``` to denote a group. This allows one to treat a set of characters inside a group as a singular item. By default, each group in an expression is numbered from left to right and can be [back-referenced](#back-references). If this behaviour is not desired, then a non-capturing group can be used with syntax ```(?:text)```. A regular capture group may look something like:   
 ```/a(ff)/```
-Where ff is grouped together. This allows one to use quantifiers on a group of characters (ex: ```/a(ff){2}/``` which would match ```affff```) or allows the use of alternation within groups (ex: ```/f(11|00)/``` which would match ```f11``` or ```f00``).
+Where ff is grouped together. This allows one to use quantifiers on a group of characters (ex: ```/a(ff){2}/``` which would match ```affff```) or allows the use of alternation within groups (ex: ```/f(11|00)/``` which would match ```f11``` or ```f00```).
 
 ### Bracket Expressions
 
