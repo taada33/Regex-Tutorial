@@ -66,7 +66,7 @@ Character classes allow the regex user to specify which characters can occur in 
 this indicates that the match must be ```ff``` followed by any of the characters inside the square brackets. Alternatively, this could be accomplished using
 ```/ff[a-f0-9]/``` where the notation ```a-f``` and ```0-9``` specify the range of acceptable characters (abcdef and 0123456789).
 
-Character classes can also be expressed in the form ```\d``` or ```\s``` ```\w```. ```\d``` would match any digit, ```\s``` would match any whitespace symbol (spaces, tabs, or newlines) and ```\w``` would match word characters. ```\w``` is equivalent to the bracket expression ```[A-za-z0-9_]```. Finally, the dot character class ```.``` can be used to match any character (except newline). 
+Character classes can also be expressed in the form ```\d``` or ```\s``` or ```\w```. ```\d``` would match any digit, ```\s``` would match any whitespace symbol (spaces, tabs, or newlines) and ```\w``` would match word characters. ```\w``` is equivalent to the bracket expression ```[A-za-z0-9_]```. Finally, the dot character class ```.``` can be used to match any character (except newline). 
 
 ### Flags
 
@@ -83,6 +83,7 @@ Where ff is grouped together. This allows one to use quantifiers on a group of c
 
 ### Bracket Expressions
 
+Brackets expressions, discussed in the [character classes](#character-classes) section above, can be used to create a list of acceptable characters in a position.
 ### Greedy and Lazy Match
 
 ### Boundaries
