@@ -112,4 +112,4 @@ The notation for look-ahead is x(?=y), where item x must be followed by item y. 
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Feel free to visit my Github, [taada33](https://github.com/taada33) or send me an email at taadamson33@gmail.com.
