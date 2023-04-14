@@ -107,6 +107,10 @@ Back-references are useful when there are opportunities to reuse code. You can r
 
 ### Look-ahead and Look-behind
 
+Look-ahead and look-behind are tools that one can use to specify the match conditions based on the surrounding characters. For instance, if you wanted to match a hex number ```ffff``` from ```0xffff```, but only when it is preceded by ```0x```, then one could use a look-behind  such as ```/(?<=0x)ffff/```. To clarify, the look-behind notation is ```(?<=y)x```, where item y must precede item x for a match to occur.
+The notation for look-ahead is x(?=y), where item x must be followed by item y. This could be used to specify the end of a hex word ```0xcafed00d``` such that ```0xcafe``` is only matched if followed by ```d00d```:
+```/0xcafe(?=d00d)/```
+
 ## Author
 
 A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
