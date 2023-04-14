@@ -33,7 +33,9 @@ The expression above allows one to filter strings for hexidecimal numbers. The s
 Anchors allow the user to specify the position constraints of a regex match. The caret ```^``` can be used to specify that the match must occur at the beginning of a string. For example, a regex such as ```/^aee/``` would match  
 ```aee```  
 but not:  
-```123aee```  
+```123aee```
+or 
+```0x123aee is a hexidecimal```
 Alternatively, one can match the end of a string by using the ```$``` character. This could be accomplished with ```/fff$/``` which would match  
 ```000fff```      
 but not:     
@@ -97,7 +99,11 @@ Greedy and lazy matching is the difference between matching as much as possible 
 
 ### Boundaries
 
+Boundaries are similar to anchors, in that they specify the position constraints of the match. If a match is required to be enclosed in whitespace, (a word) then one can match to the front and back of the word using ```\b```. For instance, one could use the regex ```/af800\b/``` to match ```af800``` from ```"0xaf800``` but not ```0xaf800ff```.
+
 ### Back-references
+
+Back-references are useful when there are opportunities to reuse code. You can refer to previously defined character groups (referred by number, indexed from left to right in the regex) via ```\1``` ```\2``` etc.. For instance, if two character groups were created in the regex expression ```/(123)(fff)/```, one could refer to these groups at another point in the expression by doing ```/(123)(fff)\1\2/``` where ```\1``` refers to ```(123)``` and ```\2``` refers to ```(fff)```.
 
 ### Look-ahead and Look-behind
 
